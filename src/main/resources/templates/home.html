@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>YSW AdSense</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+          href="../../css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="http://www.thymeleaf.org"> YSW AdSense </a>
+            <ul class="nav">
+                <li><a th:href="@{/}" href="home.html"> Home </a></li>
+            </ul>
+        </div>
+    </div>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+
+    <div sec:authorize="hasAuthority('ADMIN')">
+        <ul>
+            <li><a href="/user/create">Create a new user</a></li>
+            <li><a href="/users">View all users</a></li>
+        </ul>
+    </div>
+    <div sec:authorize="hasAuthority('USER')">
+        <p th:if="${mp} == null">还没有关联公众号, <a th:href="@{/authorize}">去关联</a></p>
+        <p th:if="${mp} != null" th:text="${mp.appId}"></p>
+        <div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

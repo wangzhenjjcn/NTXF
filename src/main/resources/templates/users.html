@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>YSW AdSense</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+          href="../../css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="http://www.thymeleaf.org"> YSW AdSense </a>
+            <ul class="nav">
+                <li><a th:href="@{/}" href="home.html"> Home </a></li>
+            </ul>
+        </div>
+    </div>
+
+<h1>List of Users</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>User name</th>
+        <th>Role</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td><a th:href="@{/user/${user.id}}" th:text="${user.userName}"></a></td>
+        <td th:text="${user.role}"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>
