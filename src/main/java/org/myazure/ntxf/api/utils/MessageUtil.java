@@ -22,6 +22,7 @@ import java.util.Map;
 
 /**
  * @author wangzhenjjcn@gmail.com
+ * V 1.0.0
  */
 public class MessageUtil {
 

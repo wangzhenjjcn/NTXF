@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
- * @author csyangchsh@gmail.com
+ * @author wangzhenjjcn@gmail.com
  */
 public class AppUrlService {
 

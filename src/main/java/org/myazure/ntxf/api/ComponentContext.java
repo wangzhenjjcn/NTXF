@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 
- * @author WangZhen
+ * @author WangZhen <wangzhenjjcn@gmail.com>
  *
  */
 @Component("componentContext")
